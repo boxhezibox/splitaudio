@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="de" data-folder="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SplitAudio — Jede App mit eigener Lautstärke</title>
+<meta name="description" content="SplitAudio ist eine Mac-Menüleisten-App für Lautstärke, Stummschaltung und Ausgabegerät pro App.">
+<meta name="theme-color" content="#FCF8F4">
+<script>(function(){try{
+var map={zh:"zh-hans",ja:"ja",de:"de",fr:"fr",es:"es"},want="",q=(location.search.match(/[?&]lang=([A-Za-z-]+)/)||[])[1];
+function pick(l){l=l.toLowerCase();if(l.indexOf("en")===0)return"";if(/^zh-(hant|tw|hk|mo)/.test(l))return null;var b=l.split("-")[0];return map[b]!==undefined?map[b]:null}
+if(q){var r=pick(q);want=r===null?"":r}else{var ls=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||"en"];
+for(var i=0;i<ls.length;i++){var p=pick(ls[i]);if(p!==null){want=p;break}}}
+var cur=document.documentElement.getAttribute("data-folder")||"";
+if(want!==cur){var f=location.pathname.split("/").pop()||"index.html";
+location.replace((cur?"../":"")+(want?want+"/":"")+f+location.search+location.hash)}}catch(e){}})();</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%224%204%2092%2092%22%3E%3Crect%20x%3D%225%22%20y%3D%225%22%20width%3D%2290%22%20height%3D%2290%22%20rx%3D%2220%22%20fill%3D%22%23FFFFFF%22%20stroke%3D%22%2318171A%22%20stroke-opacity%3D%22.14%22%20stroke-width%3D%222%22/%3E%3Cpath%20d%3D%22M16%2056%20C26%2030%2038%2030%2048%2050%20S70%2074%2084%2042%22%20fill%3D%22none%22%20stroke%3D%22%231F3A5F%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22/%3E%3Cpath%20d%3D%22M18%2064%20C28%2040%2040%2040%2050%2058%20S72%2082%2086%2052%22%20fill%3D%22none%22%20stroke%3D%22%23D1495B%22%20stroke-width%3D%224.2%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
+<link rel="alternate" hreflang="en" href="https://boxhezibox.github.io/splitaudio/index.html"><link rel="alternate" hreflang="zh-Hans" href="https://boxhezibox.github.io/splitaudio/zh-hans/index.html"><link rel="alternate" hreflang="ja" href="https://boxhezibox.github.io/splitaudio/ja/index.html"><link rel="alternate" hreflang="de" href="https://boxhezibox.github.io/splitaudio/de/index.html"><link rel="alternate" hreflang="fr" href="https://boxhezibox.github.io/splitaudio/fr/index.html"><link rel="alternate" hreflang="es" href="https://boxhezibox.github.io/splitaudio/es/index.html"><link rel="alternate" hreflang="x-default" href="https://boxhezibox.github.io/splitaudio/index.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="top"><div class="bar">
+<a class="brand" href="index.html"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="8" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="4.2" stroke-linecap="round"/></svg>SplitAudio</a>
+<nav class="links"><a href="support.html">Support</a><a href="privacy.html">Datenschutz</a></nav>
+<div class="right"><a class="btn dark" href="mailto:heziboite@outlook.com">Kontakt</a></div>
+</div></header>
+<main>
+
+<section class="panel sky">
+<div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+<div class="hero">
+<h1>Jede App mit<br><em>eigener</em> Lautstärke.</h1>
+<p class="lead">SplitAudio wohnt in der Menüleiste deines Mac. Mach eine App leiser, schalte eine andere stumm und schick jede auf eigene Lautsprecher oder Kopfhörer — ohne den Rest anzurühren.</p>
+<a class="btn light" href="support.html">Loslegen</a>
+<div class="mock" role="img" aria-label="Darstellung der Lautstärke pro App">
+<div class="mock-head"><b>SplitAudio</b><span class="dots"><i></i><i></i></span></div>
+<div class="box"><p class="cap">Szenen</p><div class="scenes"><div class="tile" style="--c:#5E7BE6;--bg:#EAF0FE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg><span>Fokus</span></div><div class="tile" style="--c:#4DB380;--bg:#E7F6EE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3.5 19c.4-3 2.6-4.6 5.5-4.6s5.100 1.600 5.500 4.600M15 14.600c2.400-.3 4.600.8 5.500 3.400"/></svg><span>Meeting</span></div><div class="tile" style="--c:#DE6D9B;--bg:#FCEAF2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="16" r="2"/></svg><span>Musik</span></div><div class="tile" style="--c:#E8A62B;--bg:#FEF3D8"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 11v4M6 13h4M16 12h.01M18 14.500h.01"/></svg><span>Gaming</span></div></div></div>
+<div class="box" style="margin-bottom:0"><p class="cap">Wird abgespielt</p><div class="app" style="--c:#FF8A5B"><i class="ico"></i><span class="name">Musik-Player</span><span class="track"><i style="width:72%"></i></span><span class="val">72%</span></div><div class="app" style="--c:#4F9CF5"><i class="ico"></i><span class="name">Browser</span><span class="track"><i style="width:28%"></i></span><span class="val">28%</span></div><div class="app" style="--c:#3DBE9B"><i class="ico"></i><span class="name">Videoanruf</span><span class="track"><i style="width:100%"></i></span><span class="val">100%</span></div><div class="app" style="--c:#9B7BF0"><i class="ico"></i><span class="name">Spiel</span><span class="track"><i style="width:0%"></i></span><span class="val">Stumm</span></div></div>
+</div>
+</div>
+</section>
+
+<section class="sec"><div class="wrap">
+<h2 class="sec-title">Eine Menüleiste, <em>jeder</em> Ton.</h2>
+<div class="icon-row"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.500 9a4 4 0 010 6M19 7a7.500 7.500 0 010 10"/></svg><span>Lautstärke</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M17 9.500l4 5M21 9.500l-4 5"/></svg><span>Stumm</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.500"/><rect x="17" y="14" width="4" height="6" rx="1.500"/></svg><span>Ausgabe</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Szenen</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L5 14h6l-1 7 8-11h-6l1-7z"/></svg><span>Kurzbefehle</span></div></div>
+</div></section>
+
+<section class="sec"><div class="feature"><div class="wrap"><div class="grid">
+<div class="scene-card" role="img" aria-label="Meeting">
+<div class="scene-top"><span class="tile-sm" style="--c:#4DB380;--bg:#E7F6EE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3.5 19c.4-3 2.6-4.6 5.5-4.6s5.100 1.600 5.500 4.600M15 14.600c2.400-.3 4.600.8 5.500 3.400"/></svg></span><b>Meeting</b><span class="switch"></span></div>
+<div class="app" style="--c:#3DBE9B"><i class="ico"></i><span class="name">Videoanruf</span><span class="track"><i style="width:100%"></i></span><span class="val">100%</span></div><div class="app" style="--c:#FF8A5B"><i class="ico"></i><span class="name">Musik-Player</span><span class="track"><i style="width:20%"></i></span><span class="val">20%</span></div><div class="app" style="--c:#4F9CF5"><i class="ico"></i><span class="name">Browser</span><span class="track"><i style="width:0%"></i></span><span class="val">Stumm</span></div>
+</div>
+<div><h2>Einmal einrichten. <em>Jederzeit</em> abrufen.</h2><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.500 9a4 4 0 010 6M19 7a7.500 7.500 0 010 10"/></svg></span><div><h3>Jede App, ihr eigener Pegel</h3><p>Mach einen lauten Browser-Tab leiser, während die Musik weiterläuft, oder schalte eine App ganz stumm.</p></div></div><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.500"/><rect x="17" y="14" width="4" height="6" rx="1.500"/></svg></span><div><h3>Ton, wohin du willst</h3><p>Schick jede App auf andere Lautsprecher oder ein anderes Headset, unabhängig von der Systemausgabe.</p></div></div><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg></span><div><h3>Ein Klick oder ein Kurzbefehl</h3><p>Speichere Einstellungen wie „Meeting“ oder „Fokus“ und wende sie über die Menüleiste oder die App „Kurzbefehle“ an.</p></div></div></div>
+</div></div></div></section>
+
+<section class="sec"><div class="wrap"><div class="quote">
+<blockquote>“Dein Audio wird in Echtzeit im Arbeitsspeicher verarbeitet — nie aufgezeichnet, nie hochgeladen.”</blockquote>
+<div class="who"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="6" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="2.4" stroke-linecap="round"/></svg>Datenschutz von Anfang an.</div>
+<div class="chips"><span class="chip">Nie aufgezeichnet</span><span class="chip">Keine Datenerhebung</span></div>
+</div></div></section>
+
+</main>
+<footer><div class="wrap">
+<div><a class="brand" href="index.html"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="8" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="4.2" stroke-linecap="round"/></svg>SplitAudio</a></div>
+<div><p class="label">Produkt</p><ul><li><a href="index.html">Übersicht</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Datenschutzerklärung</a></li></ul></div>
+<div><p class="label">Kontakt</p><ul><li><a href="mailto:heziboite@outlook.com">heziboite@outlook.com</a></li></ul></div>
+<p class="legal">© 2026 SplitAudio</p>
+</div></footer>
+</body>
+</html>
