@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SplitAudio — Set each app’s volume separately</title>
+<meta name="description" content="SplitAudio is a Mac menu bar app that lets you control each app’s volume and output device separately.">
+<meta name="theme-color" content="#FCF8F4">
+<script>(function(){try{
+var map={zh:"zh-Hans",ja:"ja",de:"de",fr:"fr",es:"es"},q=(location.search.match(/[?&]lang=([A-Za-z-]+)/)||[])[1],want="en";
+function pick(l){l=l.toLowerCase();if(l.indexOf("en")===0)return"en";var b=l.split("-")[0];return map[b]||null}
+if(q){want=pick(q)||"en"}else{var ls=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||"en"];
+for(var i=0;i<ls.length;i++){var p=pick(ls[i]);if(p){want=p;break}}}
+var d=document.documentElement,m={"en": ["SplitAudio — Set each app’s volume separately", "SplitAudio is a Mac menu bar app that lets you control each app’s volume and output device separately."], "zh-Hans": ["SplitAudio — 为每个应用单独调整音量", "SplitAudio 是一款 Mac 菜单栏应用，可以分别控制每个应用的音量和输出设备。"], "ja": ["SplitAudio — アプリごとに音量を個別に調整", "SplitAudioは、アプリごとに音量と出力デバイスを個別にコントロールできるMacのメニューバーアプリです。"], "de": ["SplitAudio — Die Lautstärke jeder App einzeln einstellen", "SplitAudio ist eine Mac-Menüleisten-App, mit der du die Lautstärke und das Ausgabegerät jeder App einzeln steuerst."], "fr": ["SplitAudio — Réglez le volume de chaque app séparément", "SplitAudio est une app de barre des menus pour Mac qui permet de contrôler séparément le volume et le périphérique de sortie de chaque app."], "es": ["SplitAudio — El volumen de cada app, por separado", "SplitAudio es una app de barra de menús para Mac con la que puedes controlar por separado el volumen y el dispositivo de salida de cada app."]}[want];d.setAttribute("data-ui",want);d.lang=want;
+document.title=m[0];var e=document.querySelector('meta[name=description]');if(e)e.content=m[1]}catch(x){}})();</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%224%204%2092%2092%22%3E%3Crect%20x%3D%225%22%20y%3D%225%22%20width%3D%2290%22%20height%3D%2290%22%20rx%3D%2220%22%20fill%3D%22%23FFFFFF%22%20stroke%3D%22%2318171A%22%20stroke-opacity%3D%22.14%22%20stroke-width%3D%222%22/%3E%3Cpath%20d%3D%22M16%2056%20C26%2030%2038%2030%2048%2050%20S70%2074%2084%2042%22%20fill%3D%22none%22%20stroke%3D%22%231F3A5F%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22/%3E%3Cpath%20d%3D%22M18%2064%20C28%2040%2040%2040%2050%2058%20S72%2082%2086%2052%22%20fill%3D%22none%22%20stroke%3D%22%23D1495B%22%20stroke-width%3D%224.2%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="l" data-l="en" lang="en">
+<header class="top"><div class="bar">
+<a class="brand" href="index.html"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="8" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="4.2" stroke-linecap="round"/></svg>SplitAudio</a>
+<nav class="links"><a href="support.html">Support</a><a href="privacy.html">Privacy</a></nav>
+<div class="right"><a class="btn dark" href="mailto:heziboite@outlook.com">Contact developer</a></div>
+</div></header>
+<main>
+
+<section class="panel sky">
+<div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+<div class="hero">
+<h1>Every app,<br>its own volume.</h1>
+<p class="lead">SplitAudio stays in your Mac’s menu bar and has just one simple window.</p>
+<div class="mock" role="img" aria-label="Illustration of volume levels for each app">
+<div class="mock-head"><b>SplitAudio</b><span class="dots"><i></i><i></i></span></div>
+<div class="box"><p class="cap">Scenes</p><div class="scenes"><div class="tile" style="--c:#5E7BE6;--bg:#EAF0FE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg><span>Focus</span></div><div class="tile" style="--c:#4DB380;--bg:#E7F6EE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3.5 19c.4-3 2.6-4.6 5.5-4.6s5.100 1.600 5.500 4.600M15 14.600c2.400-.3 4.600.8 5.500 3.400"/></svg><span>Meeting</span></div><div class="tile" style="--c:#DE6D9B;--bg:#FCEAF2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="16" r="2"/></svg><span>Music</span></div><div class="tile" style="--c:#E8A62B;--bg:#FEF3D8"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 11v4M6 13h4M16 12h.01M18 14.500h.01"/></svg><span>Gaming</span></div></div></div>
+<div class="box" style="margin-bottom:0"><p class="cap">Now Playing</p><div class="app" style="--c:#FF8A5B"><i class="ico"></i><span class="name">Music player</span><span class="track"><i style="width:72%"></i></span><span class="val">72%</span></div><div class="app" style="--c:#4F9CF5"><i class="ico"></i><span class="name">Browser</span><span class="track"><i style="width:28%"></i></span><span class="val">28%</span></div><div class="app" style="--c:#3DBE9B"><i class="ico"></i><span class="name">Video call</span><span class="track"><i style="width:100%"></i></span><span class="val">100%</span></div><div class="app" style="--c:#9B7BF0"><i class="ico"></i><span class="name">Game</span><span class="track"><i style="width:0%"></i></span><span class="val">Muted</span></div></div>
+</div>
+</div>
+</section>
+
+<section class="sec"><div class="wrap">
+<h2 class="sec-title">One menu bar, <em>every sound under control</em>.</h2>
+<div class="icon-row"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.500 9a4 4 0 010 6M19 7a7.500 7.500 0 010 10"/></svg><span>Volume</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M17 9.500l4 5M21 9.500l-4 5"/></svg><span>Mute</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.500"/><rect x="17" y="14" width="4" height="6" rx="1.500"/></svg><span>Output</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Scenes</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L5 14h6l-1 7 8-11h-6l1-7z"/></svg><span>Shortcuts</span></div></div>
+</div></section>
+
+<section class="sec"><div class="feature"><div class="wrap"><div class="grid">
+<div class="scene-card" role="img" aria-label="Meeting">
+<div class="scene-top"><span class="tile-sm" style="--c:#4DB380;--bg:#E7F6EE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3.5 19c.4-3 2.6-4.6 5.5-4.6s5.100 1.600 5.500 4.600M15 14.600c2.400-.3 4.600.8 5.500 3.400"/></svg></span><b>Meeting</b><span class="switch"></span></div>
+<div class="app" style="--c:#3DBE9B"><i class="ico"></i><span class="name">Video call</span><span class="track"><i style="width:100%"></i></span><span class="val">100%</span></div><div class="app" style="--c:#FF8A5B"><i class="ico"></i><span class="name">Music player</span><span class="track"><i style="width:20%"></i></span><span class="val">20%</span></div><div class="app" style="--c:#4F9CF5"><i class="ico"></i><span class="name">Browser</span><span class="track"><i style="width:0%"></i></span><span class="val">Muted</span></div>
+</div>
+<div><h2>Set it once, <em>recall</em> it anytime.</h2><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.500 9a4 4 0 010 6M19 7a7.500 7.500 0 010 10"/></svg></span><div><h3>Every app, its own volume</h3><p>Turn the player down and say no to the loudness war.</p></div></div><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.500"/><rect x="17" y="14" width="4" height="6" rx="1.500"/></svg></span><div><h3>Change the output device so music always plays in your headphones</h3><p>Send each app to different speakers or headphones, independent of the system output.</p></div></div><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg></span><div><h3>Switch in one click, or leave it to Shortcuts</h3><p>Scenes can be called from Shortcuts. With Apple’s system capabilities, you can have a specific scene open when an app launches.</p></div></div></div>
+</div></div></div></section>
+
+<section class="sec"><div class="wrap"><div class="quote">
+<blockquote>“No telemetry, no data uploads.”</blockquote>
+<div class="who"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="6" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="2.4" stroke-linecap="round"/></svg>Privacy is where the design starts.</div>
+<div class="chips"><span class="chip">Never uploaded</span><span class="chip">No data collected</span></div>
+</div></div></section>
+
+</main>
+<footer><div class="wrap">
+<div><a class="brand" href="index.html"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="8" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="4.2" stroke-linecap="round"/></svg>SplitAudio</a></div>
+<div><p class="label">Product</p><ul><li><a href="index.html">Overview</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
+<div><p class="label">Contact</p><ul><li><a href="mailto:heziboite@outlook.com">heziboite@outlook.com</a></li></ul></div>
+<p class="legal">© 2026 SplitAudio</p>
+</div></footer>
+</div>
+<div class="l" data-l="zh-Hans" lang="zh-Hans">
+<header class="top"><div class="bar">
+<a class="brand" href="index.html"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="8" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="4.2" stroke-linecap="round"/></svg>SplitAudio</a>
+<nav class="links"><a href="support.html">支持</a><a href="privacy.html">隐私</a></nav>
+<div class="right"><a class="btn dark" href="mailto:heziboite@outlook.com">联系开发者</a></div>
+</div></header>
+<main>
+
+<section class="panel sky">
+<div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+<div class="hero">
+<h1>每个应用，<br>单独调整音量。</h1>
+<p class="lead">SplitAudio 常驻 Mac 菜单栏，只有一个简单的窗口。</p>
+<div class="mock" role="img" aria-label="每个应用音量的示意图">
+<div class="mock-head"><b>SplitAudio</b><span class="dots"><i></i><i></i></span></div>
+<div class="box"><p class="cap">场景</p><div class="scenes"><div class="tile" style="--c:#5E7BE6;--bg:#EAF0FE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg><span>专注</span></div><div class="tile" style="--c:#4DB380;--bg:#E7F6EE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3.5 19c.4-3 2.6-4.6 5.5-4.6s5.100 1.600 5.500 4.600M15 14.600c2.400-.3 4.600.8 5.500 3.400"/></svg><span>会议</span></div><div class="tile" style="--c:#DE6D9B;--bg:#FCEAF2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="16" r="2"/></svg><span>音乐</span></div><div class="tile" style="--c:#E8A62B;--bg:#FEF3D8"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 11v4M6 13h4M16 12h.01M18 14.500h.01"/></svg><span>游戏</span></div></div></div>
+<div class="box" style="margin-bottom:0"><p class="cap">正在播放</p><div class="app" style="--c:#FF8A5B"><i class="ico"></i><span class="name">音乐播放器</span><span class="track"><i style="width:72%"></i></span><span class="val">72%</span></div><div class="app" style="--c:#4F9CF5"><i class="ico"></i><span class="name">浏览器</span><span class="track"><i style="width:28%"></i></span><span class="val">28%</span></div><div class="app" style="--c:#3DBE9B"><i class="ico"></i><span class="name">视频通话</span><span class="track"><i style="width:100%"></i></span><span class="val">100%</span></div><div class="app" style="--c:#9B7BF0"><i class="ico"></i><span class="name">游戏</span><span class="track"><i style="width:0%"></i></span><span class="val">已静音</span></div></div>
+</div>
+</div>
+</section>
+
+<section class="sec"><div class="wrap">
+<h2 class="sec-title">一个菜单栏，<em>控制所有声音</em></h2>
+<div class="icon-row"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.500 9a4 4 0 010 6M19 7a7.500 7.500 0 010 10"/></svg><span>音量</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M17 9.500l4 5M21 9.500l-4 5"/></svg><span>静音</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.500"/><rect x="17" y="14" width="4" height="6" rx="1.500"/></svg><span>输出</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>场景</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L5 14h6l-1 7 8-11h-6l1-7z"/></svg><span>快捷指令</span></div></div>
+</div></section>
+
+<section class="sec"><div class="feature"><div class="wrap"><div class="grid">
+<div class="scene-card" role="img" aria-label="会议">
+<div class="scene-top"><span class="tile-sm" style="--c:#4DB380;--bg:#E7F6EE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3.5 19c.4-3 2.6-4.6 5.5-4.6s5.100 1.600 5.500 4.600M15 14.600c2.400-.3 4.600.8 5.500 3.400"/></svg></span><b>会议</b><span class="switch"></span></div>
+<div class="app" style="--c:#3DBE9B"><i class="ico"></i><span class="name">视频通话</span><span class="track"><i style="width:100%"></i></span><span class="val">100%</span></div><div class="app" style="--c:#FF8A5B"><i class="ico"></i><span class="name">音乐播放器</span><span class="track"><i style="width:20%"></i></span><span class="val">20%</span></div><div class="app" style="--c:#4F9CF5"><i class="ico"></i><span class="name">浏览器</span><span class="track"><i style="width:0%"></i></span><span class="val">已静音</span></div>
+</div>
+<div><h2>设置一次，<em>随时</em>重现</h2><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.500 9a4 4 0 010 6M19 7a7.500 7.500 0 010 10"/></svg></span><div><h3>每个应用，独立音量</h3><p>拉低播放器的音量，拒绝响度战争</p></div></div><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.500"/><rect x="17" y="14" width="4" height="6" rx="1.500"/></svg></span><div><h3>改变输出设备，音乐可以固定在耳机响起了</h3><p>把每个应用送到不同的扬声器或耳机，与系统输出互不影响。</p></div></div><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg></span><div><h3>一键切换，或交给快捷指令</h3><p>支持在快捷指令中调用场景，你可以用Apple系统能力要求在某个应用程序启动时打开特定场景</p></div></div></div>
+</div></div></div></section>
+
+<section class="sec"><div class="wrap"><div class="quote">
+<blockquote>“拒绝遥测和数据上传”</blockquote>
+<div class="who"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="6" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="2.4" stroke-linecap="round"/></svg>隐私是设计的起点。</div>
+<div class="chips"><span class="chip">从不上传</span><span class="chip">不收集任何数据</span></div>
+</div></div></section>
+
+</main>
+<footer><div class="wrap">
+<div><a class="brand" href="index.html"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="8" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="4.2" stroke-linecap="round"/></svg>SplitAudio</a></div>
+<div><p class="label">产品</p><ul><li><a href="index.html">概览</a></li><li><a href="support.html">支持</a></li><li><a href="privacy.html">隐私政策</a></li></ul></div>
+<div><p class="label">联系</p><ul><li><a href="mailto:heziboite@outlook.com">heziboite@outlook.com</a></li></ul></div>
+<p class="legal">© 2026 SplitAudio</p>
+</div></footer>
+</div>
+<div class="l" data-l="ja" lang="ja">
+<header class="top"><div class="bar">
+<a class="brand" href="index.html"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="8" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="4.2" stroke-linecap="round"/></svg>SplitAudio</a>
+<nav class="links"><a href="support.html">サポート</a><a href="privacy.html">プライバシー</a></nav>
+<div class="right"><a class="btn dark" href="mailto:heziboite@outlook.com">開発者に問い合わせ</a></div>
+</div></header>
+<main>
+
+<section class="panel sky">
+<div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+<div class="hero">
+<h1>アプリごとに、<br>音量を個別に調整。</h1>
+<p class="lead">SplitAudioはMacのメニューバーに常駐し、シンプルなウインドウが1つだけあります。</p>
+<div class="mock" role="img" aria-label="アプリごとの音量を示す図">
+<div class="mock-head"><b>SplitAudio</b><span class="dots"><i></i><i></i></span></div>
+<div class="box"><p class="cap">シーン</p><div class="scenes"><div class="tile" style="--c:#5E7BE6;--bg:#EAF0FE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg><span>集中</span></div><div class="tile" style="--c:#4DB380;--bg:#E7F6EE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3.5 19c.4-3 2.6-4.6 5.5-4.6s5.100 1.600 5.500 4.600M15 14.600c2.400-.3 4.600.8 5.500 3.400"/></svg><span>会議</span></div><div class="tile" style="--c:#DE6D9B;--bg:#FCEAF2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="16" r="2"/></svg><span>音楽</span></div><div class="tile" style="--c:#E8A62B;--bg:#FEF3D8"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 11v4M6 13h4M16 12h.01M18 14.500h.01"/></svg><span>ゲーム</span></div></div></div>
+<div class="box" style="margin-bottom:0"><p class="cap">再生中</p><div class="app" style="--c:#FF8A5B"><i class="ico"></i><span class="name">音楽プレーヤー</span><span class="track"><i style="width:72%"></i></span><span class="val">72%</span></div><div class="app" style="--c:#4F9CF5"><i class="ico"></i><span class="name">ブラウザ</span><span class="track"><i style="width:28%"></i></span><span class="val">28%</span></div><div class="app" style="--c:#3DBE9B"><i class="ico"></i><span class="name">ビデオ通話</span><span class="track"><i style="width:100%"></i></span><span class="val">100%</span></div><div class="app" style="--c:#9B7BF0"><i class="ico"></i><span class="name">ゲーム</span><span class="track"><i style="width:0%"></i></span><span class="val">ミュート中</span></div></div>
+</div>
+</div>
+</section>
+
+<section class="sec"><div class="wrap">
+<h2 class="sec-title">メニューバーひとつで、<em>すべての音をコントロール</em>。</h2>
+<div class="icon-row"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.500 9a4 4 0 010 6M19 7a7.500 7.500 0 010 10"/></svg><span>音量</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M17 9.500l4 5M21 9.500l-4 5"/></svg><span>ミュート</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.500"/><rect x="17" y="14" width="4" height="6" rx="1.500"/></svg><span>出力</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>シーン</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L5 14h6l-1 7 8-11h-6l1-7z"/></svg><span>ショートカット</span></div></div>
+</div></section>
+
+<section class="sec"><div class="feature"><div class="wrap"><div class="grid">
+<div class="scene-card" role="img" aria-label="会議">
+<div class="scene-top"><span class="tile-sm" style="--c:#4DB380;--bg:#E7F6EE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3.5 19c.4-3 2.6-4.6 5.5-4.6s5.100 1.600 5.500 4.600M15 14.600c2.400-.3 4.600.8 5.500 3.400"/></svg></span><b>会議</b><span class="switch"></span></div>
+<div class="app" style="--c:#3DBE9B"><i class="ico"></i><span class="name">ビデオ通話</span><span class="track"><i style="width:100%"></i></span><span class="val">100%</span></div><div class="app" style="--c:#FF8A5B"><i class="ico"></i><span class="name">音楽プレーヤー</span><span class="track"><i style="width:20%"></i></span><span class="val">20%</span></div><div class="app" style="--c:#4F9CF5"><i class="ico"></i><span class="name">ブラウザ</span><span class="track"><i style="width:0%"></i></span><span class="val">ミュート中</span></div>
+</div>
+<div><h2>一度設定すれば、<em>いつでも</em>再現できます。</h2><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.500 9a4 4 0 010 6M19 7a7.500 7.500 0 010 10"/></svg></span><div><h3>アプリごとに独立した音量</h3><p>プレーヤーの音量を下げて、音量競争に加わらない。</p></div></div><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.500"/><rect x="17" y="14" width="4" height="6" rx="1.500"/></svg></span><div><h3>出力デバイスを変えて、音楽をいつもヘッドホンで再生</h3><p>アプリごとに別のスピーカーやヘッドホンに出力でき、システムの出力には影響しません。</p></div></div><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg></span><div><h3>ワンクリックで切り替え、またはショートカットに任せる</h3><p>シーンはショートカットから呼び出せます。Appleのシステム機能を使えば、特定のアプリの起動時に指定したシーンを開くよう設定できます。</p></div></div></div>
+</div></div></div></section>
+
+<section class="sec"><div class="wrap"><div class="quote">
+<blockquote>“テレメトリーもデータのアップロードもなし”</blockquote>
+<div class="who"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="6" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="2.4" stroke-linecap="round"/></svg>プライバシーは設計の出発点です。</div>
+<div class="chips"><span class="chip">アップロードなし</span><span class="chip">データ収集なし</span></div>
+</div></div></section>
+
+</main>
+<footer><div class="wrap">
+<div><a class="brand" href="index.html"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="8" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="4.2" stroke-linecap="round"/></svg>SplitAudio</a></div>
+<div><p class="label">製品</p><ul><li><a href="index.html">概要</a></li><li><a href="support.html">サポート</a></li><li><a href="privacy.html">プライバシーポリシー</a></li></ul></div>
+<div><p class="label">お問い合わせ</p><ul><li><a href="mailto:heziboite@outlook.com">heziboite@outlook.com</a></li></ul></div>
+<p class="legal">© 2026 SplitAudio</p>
+</div></footer>
+</div>
+<div class="l" data-l="de" lang="de">
+<header class="top"><div class="bar">
+<a class="brand" href="index.html"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="8" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="4.2" stroke-linecap="round"/></svg>SplitAudio</a>
+<nav class="links"><a href="support.html">Support</a><a href="privacy.html">Datenschutz</a></nav>
+<div class="right"><a class="btn dark" href="mailto:heziboite@outlook.com">Entwickler kontaktieren</a></div>
+</div></header>
+<main>
+
+<section class="panel sky">
+<div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+<div class="hero">
+<h1>Jede App,<br>ihre eigene Lautstärke.</h1>
+<p class="lead">SplitAudio sitzt in der Menüleiste deines Mac und hat nur ein einziges schlichtes Fenster.</p>
+<div class="mock" role="img" aria-label="Darstellung der Lautstärke jeder App">
+<div class="mock-head"><b>SplitAudio</b><span class="dots"><i></i><i></i></span></div>
+<div class="box"><p class="cap">Szenen</p><div class="scenes"><div class="tile" style="--c:#5E7BE6;--bg:#EAF0FE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg><span>Fokus</span></div><div class="tile" style="--c:#4DB380;--bg:#E7F6EE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3.5 19c.4-3 2.6-4.6 5.5-4.6s5.100 1.600 5.500 4.600M15 14.600c2.400-.3 4.600.8 5.500 3.400"/></svg><span>Meeting</span></div><div class="tile" style="--c:#DE6D9B;--bg:#FCEAF2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="16" r="2"/></svg><span>Musik</span></div><div class="tile" style="--c:#E8A62B;--bg:#FEF3D8"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 11v4M6 13h4M16 12h.01M18 14.500h.01"/></svg><span>Gaming</span></div></div></div>
+<div class="box" style="margin-bottom:0"><p class="cap">Wird abgespielt</p><div class="app" style="--c:#FF8A5B"><i class="ico"></i><span class="name">Musik-Player</span><span class="track"><i style="width:72%"></i></span><span class="val">72%</span></div><div class="app" style="--c:#4F9CF5"><i class="ico"></i><span class="name">Browser</span><span class="track"><i style="width:28%"></i></span><span class="val">28%</span></div><div class="app" style="--c:#3DBE9B"><i class="ico"></i><span class="name">Videoanruf</span><span class="track"><i style="width:100%"></i></span><span class="val">100%</span></div><div class="app" style="--c:#9B7BF0"><i class="ico"></i><span class="name">Spiel</span><span class="track"><i style="width:0%"></i></span><span class="val">Stumm</span></div></div>
+</div>
+</div>
+</section>
+
+<section class="sec"><div class="wrap">
+<h2 class="sec-title">Eine Menüleiste, <em>alle Töne unter Kontrolle</em>.</h2>
+<div class="icon-row"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.500 9a4 4 0 010 6M19 7a7.500 7.500 0 010 10"/></svg><span>Lautstärke</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M17 9.500l4 5M21 9.500l-4 5"/></svg><span>Stumm</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.500"/><rect x="17" y="14" width="4" height="6" rx="1.500"/></svg><span>Ausgabe</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Szenen</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L5 14h6l-1 7 8-11h-6l1-7z"/></svg><span>Kurzbefehle</span></div></div>
+</div></section>
+
+<section class="sec"><div class="feature"><div class="wrap"><div class="grid">
+<div class="scene-card" role="img" aria-label="Meeting">
+<div class="scene-top"><span class="tile-sm" style="--c:#4DB380;--bg:#E7F6EE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3.5 19c.4-3 2.6-4.6 5.5-4.6s5.100 1.600 5.500 4.600M15 14.600c2.400-.3 4.600.8 5.500 3.400"/></svg></span><b>Meeting</b><span class="switch"></span></div>
+<div class="app" style="--c:#3DBE9B"><i class="ico"></i><span class="name">Videoanruf</span><span class="track"><i style="width:100%"></i></span><span class="val">100%</span></div><div class="app" style="--c:#FF8A5B"><i class="ico"></i><span class="name">Musik-Player</span><span class="track"><i style="width:20%"></i></span><span class="val">20%</span></div><div class="app" style="--c:#4F9CF5"><i class="ico"></i><span class="name">Browser</span><span class="track"><i style="width:0%"></i></span><span class="val">Stumm</span></div>
+</div>
+<div><h2>Einmal einrichten, <em>jederzeit</em> abrufen.</h2><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.500 9a4 4 0 010 6M19 7a7.500 7.500 0 010 10"/></svg></span><div><h3>Jede App, ihre eigene Lautstärke</h3><p>Dreh den Player leiser und sag Nein zum Loudness War.</p></div></div><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.500"/><rect x="17" y="14" width="4" height="6" rx="1.500"/></svg></span><div><h3>Ausgabegerät ändern, damit Musik immer über Kopfhörer läuft</h3><p>Schick jede App auf andere Lautsprecher oder Kopfhörer, unabhängig von der Systemausgabe.</p></div></div><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg></span><div><h3>Mit einem Klick wechseln oder Kurzbefehlen überlassen</h3><p>Szenen lassen sich in Kurzbefehlen aufrufen. Mit den Systemfunktionen von Apple kannst du festlegen, dass eine bestimmte Szene geöffnet wird, wenn eine App startet.</p></div></div></div>
+</div></div></div></section>
+
+<section class="sec"><div class="wrap"><div class="quote">
+<blockquote>“Keine Telemetrie, keine Uploads.”</blockquote>
+<div class="who"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="6" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="2.4" stroke-linecap="round"/></svg>Datenschutz ist der Ausgangspunkt des Designs.</div>
+<div class="chips"><span class="chip">Nie hochgeladen</span><span class="chip">Keine Daten erhoben</span></div>
+</div></div></section>
+
+</main>
+<footer><div class="wrap">
+<div><a class="brand" href="index.html"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="8" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="4.2" stroke-linecap="round"/></svg>SplitAudio</a></div>
+<div><p class="label">Produkt</p><ul><li><a href="index.html">Übersicht</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Datenschutzerklärung</a></li></ul></div>
+<div><p class="label">Kontakt</p><ul><li><a href="mailto:heziboite@outlook.com">heziboite@outlook.com</a></li></ul></div>
+<p class="legal">© 2026 SplitAudio</p>
+</div></footer>
+</div>
+<div class="l" data-l="fr" lang="fr">
+<header class="top"><div class="bar">
+<a class="brand" href="index.html"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="8" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="4.2" stroke-linecap="round"/></svg>SplitAudio</a>
+<nav class="links"><a href="support.html">Assistance</a><a href="privacy.html">Confidentialité</a></nav>
+<div class="right"><a class="btn dark" href="mailto:heziboite@outlook.com">Contacter le développeur</a></div>
+</div></header>
+<main>
+
+<section class="panel sky">
+<div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+<div class="hero">
+<h1>Chaque app,<br>son propre volume.</h1>
+<p class="lead">SplitAudio reste dans la barre des menus de votre Mac et ne dispose que d’une seule fenêtre simple.</p>
+<div class="mock" role="img" aria-label="Illustration des niveaux de volume par app">
+<div class="mock-head"><b>SplitAudio</b><span class="dots"><i></i><i></i></span></div>
+<div class="box"><p class="cap">Scènes</p><div class="scenes"><div class="tile" style="--c:#5E7BE6;--bg:#EAF0FE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg><span>Concentration</span></div><div class="tile" style="--c:#4DB380;--bg:#E7F6EE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3.5 19c.4-3 2.6-4.6 5.5-4.6s5.100 1.600 5.500 4.600M15 14.600c2.400-.3 4.600.8 5.500 3.400"/></svg><span>Réunion</span></div><div class="tile" style="--c:#DE6D9B;--bg:#FCEAF2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="16" r="2"/></svg><span>Musique</span></div><div class="tile" style="--c:#E8A62B;--bg:#FEF3D8"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 11v4M6 13h4M16 12h.01M18 14.500h.01"/></svg><span>Jeux</span></div></div></div>
+<div class="box" style="margin-bottom:0"><p class="cap">En cours de lecture</p><div class="app" style="--c:#FF8A5B"><i class="ico"></i><span class="name">Lecteur de musique</span><span class="track"><i style="width:72%"></i></span><span class="val">72%</span></div><div class="app" style="--c:#4F9CF5"><i class="ico"></i><span class="name">Navigateur</span><span class="track"><i style="width:28%"></i></span><span class="val">28%</span></div><div class="app" style="--c:#3DBE9B"><i class="ico"></i><span class="name">Appel vidéo</span><span class="track"><i style="width:100%"></i></span><span class="val">100%</span></div><div class="app" style="--c:#9B7BF0"><i class="ico"></i><span class="name">Jeu</span><span class="track"><i style="width:0%"></i></span><span class="val">Muet</span></div></div>
+</div>
+</div>
+</section>
+
+<section class="sec"><div class="wrap">
+<h2 class="sec-title">Une barre des menus, <em>tous les sons sous contrôle</em>.</h2>
+<div class="icon-row"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.500 9a4 4 0 010 6M19 7a7.500 7.500 0 010 10"/></svg><span>Volume</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M17 9.500l4 5M21 9.500l-4 5"/></svg><span>Muet</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.500"/><rect x="17" y="14" width="4" height="6" rx="1.500"/></svg><span>Sortie</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Scènes</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L5 14h6l-1 7 8-11h-6l1-7z"/></svg><span>Raccourcis</span></div></div>
+</div></section>
+
+<section class="sec"><div class="feature"><div class="wrap"><div class="grid">
+<div class="scene-card" role="img" aria-label="Réunion">
+<div class="scene-top"><span class="tile-sm" style="--c:#4DB380;--bg:#E7F6EE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3.5 19c.4-3 2.6-4.6 5.5-4.6s5.100 1.600 5.500 4.600M15 14.600c2.400-.3 4.600.8 5.500 3.400"/></svg></span><b>Réunion</b><span class="switch"></span></div>
+<div class="app" style="--c:#3DBE9B"><i class="ico"></i><span class="name">Appel vidéo</span><span class="track"><i style="width:100%"></i></span><span class="val">100%</span></div><div class="app" style="--c:#FF8A5B"><i class="ico"></i><span class="name">Lecteur de musique</span><span class="track"><i style="width:20%"></i></span><span class="val">20%</span></div><div class="app" style="--c:#4F9CF5"><i class="ico"></i><span class="name">Navigateur</span><span class="track"><i style="width:0%"></i></span><span class="val">Muet</span></div>
+</div>
+<div><h2>Configurez une fois, <em>rappelez-le</em> à tout moment.</h2><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.500 9a4 4 0 010 6M19 7a7.500 7.500 0 010 10"/></svg></span><div><h3>Chaque app, son propre volume</h3><p>Baissez le volume du lecteur et dites non à la guerre du volume.</p></div></div><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.500"/><rect x="17" y="14" width="4" height="6" rx="1.500"/></svg></span><div><h3>Changez de périphérique de sortie pour que la musique joue toujours dans votre casque</h3><p>Envoyez chaque app vers d’autres haut-parleurs ou un autre casque, indépendamment de la sortie système.</p></div></div><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg></span><div><h3>Basculez en un clic, ou laissez faire Raccourcis</h3><p>Les scènes peuvent être appelées depuis Raccourcis. Grâce aux fonctions système d’Apple, vous pouvez faire en sorte qu’une scène précise s’ouvre au lancement d’une app.</p></div></div></div>
+</div></div></div></section>
+
+<section class="sec"><div class="wrap"><div class="quote">
+<blockquote>“Ni télémétrie ni envoi de données.”</blockquote>
+<div class="who"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="6" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="2.4" stroke-linecap="round"/></svg>La confidentialité est le point de départ de la conception.</div>
+<div class="chips"><span class="chip">Jamais envoyé</span><span class="chip">Aucune donnée collectée</span></div>
+</div></div></section>
+
+</main>
+<footer><div class="wrap">
+<div><a class="brand" href="index.html"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="8" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="4.2" stroke-linecap="round"/></svg>SplitAudio</a></div>
+<div><p class="label">Produit</p><ul><li><a href="index.html">Présentation</a></li><li><a href="support.html">Assistance</a></li><li><a href="privacy.html">Politique de confidentialité</a></li></ul></div>
+<div><p class="label">Contact</p><ul><li><a href="mailto:heziboite@outlook.com">heziboite@outlook.com</a></li></ul></div>
+<p class="legal">© 2026 SplitAudio</p>
+</div></footer>
+</div>
+<div class="l" data-l="es" lang="es">
+<header class="top"><div class="bar">
+<a class="brand" href="index.html"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="8" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="4.2" stroke-linecap="round"/></svg>SplitAudio</a>
+<nav class="links"><a href="support.html">Soporte</a><a href="privacy.html">Privacidad</a></nav>
+<div class="right"><a class="btn dark" href="mailto:heziboite@outlook.com">Contactar con el desarrollador</a></div>
+</div></header>
+<main>
+
+<section class="panel sky">
+<div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+<div class="hero">
+<h1>Cada app,<br>su propio volumen.</h1>
+<p class="lead">SplitAudio reside en la barra de menús de tu Mac y tiene una sola ventana sencilla.</p>
+<div class="mock" role="img" aria-label="Ilustración de los niveles de volumen de cada app">
+<div class="mock-head"><b>SplitAudio</b><span class="dots"><i></i><i></i></span></div>
+<div class="box"><p class="cap">Escenas</p><div class="scenes"><div class="tile" style="--c:#5E7BE6;--bg:#EAF0FE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg><span>Concentración</span></div><div class="tile" style="--c:#4DB380;--bg:#E7F6EE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3.5 19c.4-3 2.6-4.6 5.5-4.6s5.100 1.600 5.500 4.600M15 14.600c2.400-.3 4.600.8 5.500 3.400"/></svg><span>Reunión</span></div><div class="tile" style="--c:#DE6D9B;--bg:#FCEAF2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="16" r="2"/></svg><span>Música</span></div><div class="tile" style="--c:#E8A62B;--bg:#FEF3D8"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 11v4M6 13h4M16 12h.01M18 14.500h.01"/></svg><span>Juegos</span></div></div></div>
+<div class="box" style="margin-bottom:0"><p class="cap">Reproduciendo</p><div class="app" style="--c:#FF8A5B"><i class="ico"></i><span class="name">Reproductor de música</span><span class="track"><i style="width:72%"></i></span><span class="val">72%</span></div><div class="app" style="--c:#4F9CF5"><i class="ico"></i><span class="name">Navegador</span><span class="track"><i style="width:28%"></i></span><span class="val">28%</span></div><div class="app" style="--c:#3DBE9B"><i class="ico"></i><span class="name">Videollamada</span><span class="track"><i style="width:100%"></i></span><span class="val">100%</span></div><div class="app" style="--c:#9B7BF0"><i class="ico"></i><span class="name">Juego</span><span class="track"><i style="width:0%"></i></span><span class="val">Silenciado</span></div></div>
+</div>
+</div>
+</section>
+
+<section class="sec"><div class="wrap">
+<h2 class="sec-title">Una barra de menús, <em>todos los sonidos bajo control</em>.</h2>
+<div class="icon-row"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.500 9a4 4 0 010 6M19 7a7.500 7.500 0 010 10"/></svg><span>Volumen</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M17 9.500l4 5M21 9.500l-4 5"/></svg><span>Silenciar</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.500"/><rect x="17" y="14" width="4" height="6" rx="1.500"/></svg><span>Salida</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Escenas</span></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L5 14h6l-1 7 8-11h-6l1-7z"/></svg><span>Atajos</span></div></div>
+</div></section>
+
+<section class="sec"><div class="feature"><div class="wrap"><div class="grid">
+<div class="scene-card" role="img" aria-label="Reunión">
+<div class="scene-top"><span class="tile-sm" style="--c:#4DB380;--bg:#E7F6EE"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3.5 19c.4-3 2.6-4.6 5.5-4.6s5.100 1.600 5.500 4.600M15 14.600c2.400-.3 4.600.8 5.500 3.400"/></svg></span><b>Reunión</b><span class="switch"></span></div>
+<div class="app" style="--c:#3DBE9B"><i class="ico"></i><span class="name">Videollamada</span><span class="track"><i style="width:100%"></i></span><span class="val">100%</span></div><div class="app" style="--c:#FF8A5B"><i class="ico"></i><span class="name">Reproductor de música</span><span class="track"><i style="width:20%"></i></span><span class="val">20%</span></div><div class="app" style="--c:#4F9CF5"><i class="ico"></i><span class="name">Navegador</span><span class="track"><i style="width:0%"></i></span><span class="val">Silenciado</span></div>
+</div>
+<div><h2>Configúralo una vez, <em>recupéralo</em> en cualquier momento.</h2><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.500 9a4 4 0 010 6M19 7a7.500 7.500 0 010 10"/></svg></span><div><h3>Cada app, su propio volumen</h3><p>Baja el volumen del reproductor y di no a la guerra del volumen.</p></div></div><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.500"/><rect x="17" y="14" width="4" height="6" rx="1.500"/></svg></span><div><h3>Cambia el dispositivo de salida para que la música suene siempre en tus auriculares</h3><p>Envía cada app a distintos altavoces o auriculares, sin afectar a la salida del sistema.</p></div></div><div class="pt"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg></span><div><h3>Cambia con un clic o déjaselo a Atajos</h3><p>Las escenas se pueden invocar desde Atajos. Con las funciones del sistema de Apple, puedes hacer que se abra una escena concreta cuando se inicie una app.</p></div></div></div>
+</div></div></div></section>
+
+<section class="sec"><div class="wrap"><div class="quote">
+<blockquote>“Sin telemetría ni subida de datos.”</blockquote>
+<div class="who"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="6" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="2.4" stroke-linecap="round"/></svg>La privacidad es el punto de partida del diseño.</div>
+<div class="chips"><span class="chip">Nunca se sube</span><span class="chip">No se recopilan datos</span></div>
+</div></div></section>
+
+</main>
+<footer><div class="wrap">
+<div><a class="brand" href="index.html"><svg viewBox="4 4 92 92" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" stroke="#18171A" stroke-opacity=".14" stroke-width="2"/><path d="M16 56 C26 30 38 30 48 50 S70 74 84 42" fill="none" stroke="#1F3A5F" stroke-width="8" stroke-linecap="round"/><path d="M18 64 C28 40 40 40 50 58 S72 82 86 52" fill="none" stroke="#D1495B" stroke-width="4.2" stroke-linecap="round"/></svg>SplitAudio</a></div>
+<div><p class="label">Producto</p><ul><li><a href="index.html">Resumen</a></li><li><a href="support.html">Soporte</a></li><li><a href="privacy.html">Política de privacidad</a></li></ul></div>
+<div><p class="label">Contacto</p><ul><li><a href="mailto:heziboite@outlook.com">heziboite@outlook.com</a></li></ul></div>
+<p class="legal">© 2026 SplitAudio</p>
+</div></footer>
+</div>
+</body>
+</html>
